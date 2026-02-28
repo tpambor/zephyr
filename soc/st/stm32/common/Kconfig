@@ -74,3 +74,10 @@ config STM32_IOCELL_CHECK_ENABLE
 	  Enables logging of I/O cell driver. This can be useful for reporting
 	  discrepancy between device-tree configuration and value stored in
 	  device OTP/option bytes
+
+config STM32_IOCELL_PER_DOMAIN_HSLV
+	bool
+	default y
+	depends on SOC_SERIES_STM32H7RSX || SOC_SERIES_STM32N6X
+	help
+	  Enable HSLV configuration for SoCs which control HSLV on a per domain basis.
